@@ -6,8 +6,9 @@
   height: 40px;
   display: flex;
   align-items: center;
+  font-size: $secondaryFontSize;
 
   &:hover {
-    background-color: #fafafa;
+    background-color: darken($whiteColor, 2);
   }
 }
