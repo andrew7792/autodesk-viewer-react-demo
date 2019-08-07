@@ -1,0 +1,9 @@
+@import "../styles/global";
+
+.bucket {
+  padding: $freeSpace;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}

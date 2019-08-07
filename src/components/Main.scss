@@ -1,0 +1,11 @@
+@import "../styles/global";
+
+.main {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .viewer {
+    margin-top: $freeSpace;
+  }
+}

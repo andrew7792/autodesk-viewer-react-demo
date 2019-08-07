@@ -1,0 +1,30 @@
+@import "../styles/global";
+
+.list-data {
+  ul {
+    list-style-type: none;
+
+    li {
+      border-bottom: 1px solid $borderColor;
+      cursor: pointer;
+    }
+
+    i {
+      border: solid $blackColor;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-right: $freeSpace;
+    }
+
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+  }
+}

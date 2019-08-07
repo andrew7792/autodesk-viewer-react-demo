@@ -1,0 +1,18 @@
+@import "../styles/global";
+
+.header {
+  min-width: 100%;
+  height: $headerHeight;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: $primaryColor;
+  display: flex;
+  align-items: center;
+  padding-left: $freeSpace;
+  border-bottom: 1px solid $borderColor;
+
+  .logo {
+    font-size: 19px;
+  }
+}

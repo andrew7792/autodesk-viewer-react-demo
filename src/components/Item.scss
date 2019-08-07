@@ -1,0 +1,13 @@
+@import "../styles/global";
+
+.item {
+  padding-left: $freeSpace;
+  padding-right: $freeSpace;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}
