@@ -1,6 +1,7 @@
 import React from "react";
 
 import BucketList from "./BucketList";
+import Viewer from "./Viewer";
 
 import "./Main.scss";
 
@@ -8,7 +9,7 @@ function Main() {
   return (
     <div className="main">
       <BucketList />
-      <div className="viewer">Viewer</div>
+      <Viewer />
     </div>
   );
 }

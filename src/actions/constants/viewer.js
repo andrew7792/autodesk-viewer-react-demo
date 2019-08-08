@@ -1,0 +1,2 @@
+export const MOUNT_VIEWER = "MOUNT_VIEWER";
+export const UNMOUNT_VIEWER = "UNMOUNT_VIEWER";
