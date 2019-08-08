@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-
+import { connect } from 'react-redux';
 // eslint-disable-next-line
 import ContextMenu from "./ContextMenu";
 import { getForgeToken } from "../libs/tokenQueries";
@@ -39,5 +39,5 @@ function Item(props) {
     </Fragment>
   );
 }
-
-export default Item;
+export default connect()(Item)
+//export default Item;

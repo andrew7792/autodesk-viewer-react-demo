@@ -1,0 +1,1 @@
+export const GET_DESIGN_DATA = "GET_DESIGN_DATA ";
