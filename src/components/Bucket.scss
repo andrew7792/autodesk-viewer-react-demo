@@ -4,6 +4,6 @@
   padding: $freeSpace;
 
   &:hover {
-    background-color: #fafafa;
+    background-color: darken($whiteColor, 2);
   }
 }
