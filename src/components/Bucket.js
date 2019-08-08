@@ -1,10 +1,14 @@
 import React, { useEffect, useState, Fragment } from "react";
 
+// eslint-disable-next-line
+import ContextMenu from "./ContextMenu";
 import ListData from "./ListData";
 import Item from "./Item";
 import { getItems } from "../libs/ossQueries";
 
 import "./Bucket.scss";
+
+const buttons = [{ text: "Upload", action: () => console.log("Upload") }];
 
 function Bucket(props) {
   const [items, setItems] = useState(null);
@@ -19,10 +23,11 @@ function Bucket(props) {
   const { data } = props;
   return (
     <Fragment key={data.id}>
-      <li className="bucket" onClick={() => setIsOpen(!isOpen)}>
+      <li className="bucket" id={data.id} onClick={() => setIsOpen(!isOpen)}>
         <i className={isOpen ? "down" : "right"} />
         {data.text}
       </li>
+      <ContextMenu id={data.id} buttons={buttons} />
       {isOpen && <ListData data={items} child={Item} />}
     </Fragment>
   );

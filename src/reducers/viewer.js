@@ -9,7 +9,10 @@ const initialState = {
 
 const viewer = handleActions(
   {
-    [actions.mountViewer]: (state, action) => console.log(action),
+    [actions.mountViewer]: (state, action) => ({
+      isShown: true,
+      urn: action.payload
+    }),
     [actions.unmountViewer]: () => initialState
   },
   initialState
