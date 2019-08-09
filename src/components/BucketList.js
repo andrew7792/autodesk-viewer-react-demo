@@ -16,7 +16,7 @@ function BucketList() {
   return (
     <div className="list">
       <div className="toolbar"> Toolbar</div>
-        <ListData data={buckets} child='buckets'/>
+      <ListData data={buckets} child="buckets" />
     </div>
   );
 }
