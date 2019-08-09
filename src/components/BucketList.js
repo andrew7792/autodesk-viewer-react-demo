@@ -10,7 +10,7 @@ import "./BucketList.scss";
 
 function BucketList() {
   const [buckets, setBuckets] = useState(null);
-  const [propA, setPropA] = useState('');
+  const [propA, setPropA] = useState(0);
 
   useEffect(() => {
     getDesignDataAction();
