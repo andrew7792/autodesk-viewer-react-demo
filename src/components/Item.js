@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 import actions from "../actions/viewer";
 // eslint-disable-next-line
@@ -18,15 +18,19 @@ function Item(props) {
   ];
 
   const handleClick = () => {
+    const { mountViewer, data } = props;
     if (!isReady) {
       getForgeToken(accessToken => {
-        getStatus(props.data.id, accessToken).then(data => {
-          if (data.status === "success" && data.progress === "complete") {
+        getStatus(data.id, accessToken).then(res => {
+          if (res.status === "success" && res.progress === "complete") {
             setIsReady(true);
+            mountViewer(data.id);
             console.log("Ready!");
           }
         });
       });
+    } else {
+      mountViewer(data.id);
     }
   };
 
@@ -40,6 +44,7 @@ function Item(props) {
     </Fragment>
   );
 }
+
 const mapDispatchToProps = dispatch => ({
   mountViewer: event => dispatch(actions.mountViewer(event)),
   unmountViewer: event => dispatch(actions.unmountViewer(event))

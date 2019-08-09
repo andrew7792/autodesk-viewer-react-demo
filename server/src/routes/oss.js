@@ -83,7 +83,6 @@ router.post(
   "/objects",
   multer({ dest: "uploads/" }).single("fileToUpload"),
   async (req, res, next) => {
-    console.log(req.file);
     fs.readFile(req.file.path, async (err, data) => {
       if (err) {
         next(err);
