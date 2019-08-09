@@ -1,5 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { connect } from 'react-redux';
+
+import actions from "../actions/viewer";
 // eslint-disable-next-line
 import ContextMenu from "./ContextMenu";
 import { getForgeToken } from "../libs/tokenQueries";
@@ -38,5 +40,12 @@ function Item(props) {
     </Fragment>
   );
 }
-export default connect()(Item)
-//export default Item;
+const mapDispatchToProps = dispatch => ({
+  mountViewer: event => dispatch(actions.mountViewer(event)),
+  unmountViewer: event => dispatch(actions.unmountViewer(event))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Item);
