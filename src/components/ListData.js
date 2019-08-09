@@ -1,13 +1,15 @@
 import React from "react";
-import Bucket from './Bucket'
-import Item from './Item'
+
+// eslint-disable-next-line
+import Bucket from "./Bucket";
+import Item from "./Item";
 import loading from "../img/loading.svg";
 
 import "./ListData.scss";
 
 function ListData(props) {
   const { data, child } = props;
-  console.log(props) 
+
   if (!data)
     return (
       <div className="loading">
@@ -17,11 +19,11 @@ function ListData(props) {
 
   return (
     <div className="list-data">
-        <ul>{
-          child === 'buckets' 
-            ? data.map(value => <Bucket data={value} />)
-            : data.map(value => <Item  data={value} />)
-          }</ul>
+      <ul>
+        {child === "buckets"
+          ? data.map(value => <Bucket key={value.id} data={value} />)
+          : data.map(value => <Item key={value.id} data={value} />)}
+      </ul>
     </div>
   );
 }

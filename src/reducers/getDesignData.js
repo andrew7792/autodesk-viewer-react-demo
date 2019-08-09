@@ -1,17 +1,17 @@
-import { fromJS } from 'immutable';
-import { handleActions, combineActions } from 'redux-actions';
+import { fromJS } from "immutable";
+import { handleActions, combineActions } from "redux-actions";
 
 import actions from '../actions/getDesignData'
 
 const initialState = fromJS({
-    data: [
-        {
-            children: false,
-            id: "",
-            text: "",
-            type: ""
-        }
-    ]
+  data: [
+    {
+      children: false,
+      id: "",
+      text: "",
+      type: ""
+    }
+  ]
 });
 
 const getDesignData = handleActions(
