@@ -1,11 +1,15 @@
 @import "../styles/global";
 
-.list {
+.bucket-list {
   margin: $freeSpace;
   min-height: 500px;
   min-width: 350px;
   border-radius: 7px;
   border: 1px solid $borderColor;
+
+  .list {
+    overflow: auto;
+  }
 
   .toolbar {
     width: 100%;
