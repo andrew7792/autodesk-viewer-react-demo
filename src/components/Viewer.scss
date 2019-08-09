@@ -1,0 +1,10 @@
+@import "../styles/global";
+
+.container {
+  margin-top: $freeSpace;
+  margin-right: $freeSpace;
+
+  .forgeViewer {
+    width: 100%;
+  }
+}

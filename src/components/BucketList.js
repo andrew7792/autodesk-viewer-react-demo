@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
-import Refresh from './Refresh'
-import AddBucket from './AddBucket'
+import Refresh from "./Refresh";
+import AddBucket from "./AddBucket";
 import ListData from "./ListData";
 import { getBuckets } from "../libs/ossQueries";
-import {getDesignDataAction} from '../actions/getDesignData'
+import { getDesignDataAction } from "../actions/getDesignData";
 import "./BucketList.scss";
 
 function BucketList() {
   const [buckets, setBuckets] = useState(null);
-  const [propA, setPropA] = useState('');
+  const [propA, setPropA] = useState("");
 
   useEffect(() => {
     getDesignDataAction();
@@ -20,25 +20,25 @@ function BucketList() {
   }, [propA]);
 
   return (
-    <div className="list">
+    <div className="bucket-list">
       <div className="toolbar">
-        <AddBucket/>
-        <Refresh refresh={setPropA}/>
+        <AddBucket />
+        <Refresh refresh={setPropA} />
       </div>
-        <ListData data={buckets} child='buckets'/>
+      <div className="list">
+        <ListData data={buckets} child="buckets" />
+      </div>
     </div>
   );
 }
 
-const mapStateToProps = state => ({ getDesignData: state.getDesignData })
+const mapStateToProps = state => ({ getDesignData: state.getDesignData });
 
 const mapDispatchToProps = dispatch => ({
   getDesignDataAction: dispatch(getDesignDataAction)
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(BucketList);
-
-//export default BucketList;

@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import {} from "immutable";
 import { connect } from "react-redux";
 
 import actions from "../actions/viewer";
@@ -19,6 +20,7 @@ function Item(props) {
 
   const handleClick = () => {
     const { mountViewer, data } = props;
+
     if (!isReady) {
       getForgeToken(accessToken => {
         getStatus(data.id, accessToken).then(res => {
