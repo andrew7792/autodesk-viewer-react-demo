@@ -20,6 +20,7 @@ export const scopeInternal = [
   "bucket:read",
   "bucket:update",
   "bucket:create",
+  "bucket:delete",
   "code:all"
 ];
 export const scopePublic = ["viewables:read"];
