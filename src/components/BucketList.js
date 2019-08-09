@@ -13,6 +13,7 @@ function BucketList() {
   const [propA, setPropA] = useState(0);
 
   useEffect(() => {
+    console.log('update')
     getDesignDataAction();
     getBuckets().then(data => {
       setBuckets(data);
@@ -26,7 +27,9 @@ function BucketList() {
         <Refresh refresh={setPropA} />
       </div>
       <div className="list">
-        <ListData data={buckets} child="buckets" />
+        {
+          <ListData data={buckets} child="buckets" />
+        }
       </div>
     </div>
   );

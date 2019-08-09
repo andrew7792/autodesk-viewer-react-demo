@@ -1,6 +1,10 @@
 @import "../styles/global";
 
 .container {
+  position: absolute;
+  left:20%;
+  width: 80%;
+  height: 80%;
   margin-top: $freeSpace;
   margin-right: $freeSpace;
 
