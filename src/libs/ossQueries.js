@@ -19,3 +19,13 @@ export const getItems = id => {
       return res.data;
     });
 };
+
+export const uploadFile = data => {
+  return axios
+    .post("http://localhost:3001/api/forge/oss/objects", {
+      data
+    })
+    .then(res => {
+      console.log(res);
+    });
+};

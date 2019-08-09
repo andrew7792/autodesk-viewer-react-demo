@@ -4,21 +4,33 @@ import React, { useEffect, useState, Fragment } from "react";
 import ContextMenu from "./ContextMenu";
 import ListData from "./ListData";
 import Item from "./Item";
-import { getItems } from "../libs/ossQueries";
+import { getItems, uploadFile } from "../libs/ossQueries";
 
 import "./Bucket.scss";
-
-const buttons = [{ text: "Upload", action: () => console.log("Upload") }];
 
 function Bucket(props) {
   const [items, setItems] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+
+  const buttons = [
+    {
+      text: "Upload",
+      action: () => document.getElementById(`${props.data.id}-file`).click()
+    }
+  ];
 
   useEffect(() => {
     getItems(props.data.id).then(data => {
       setItems(data);
     });
   }, []);
+
+  const handleChange = e => {
+    const data = new FormData();
+    data.append("fileToUpload", e.target.files[0]);
+    data.append("bucketKey", props.data.id);
+    uploadFile(data);
+  };
 
   const { data } = props;
   return (
@@ -27,6 +39,13 @@ function Bucket(props) {
         <i className={isOpen ? "down" : "right"} />
         {data.text}
       </li>
+      <input
+        type="file"
+        id={`${data.id}-file`}
+        hidden
+        onChange={handleChange}
+        formEncType="multipart/form-data"
+      />
       <ContextMenu id={data.id} buttons={buttons} />
       {isOpen && <ListData data={items} child={Item} />}
     </Fragment>

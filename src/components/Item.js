@@ -5,7 +5,6 @@ import ContextMenu from "./ContextMenu";
 import { getForgeToken } from "../libs/tokenQueries";
 import { getStatus } from "../libs/forgeQueries";
 import { translate } from "../libs/modelderivativeQueries";
-import actions from "../actions/viewer";
 
 import "./Item.scss";
 
