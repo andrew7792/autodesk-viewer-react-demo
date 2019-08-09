@@ -1,10 +1,12 @@
 import { combineReducers } from "redux-immutable";
 import createBucket from "./createBucket";
 import viewer from "./viewer";
+import getDesignData from "./getDesignData";
 
 const appReducer = combineReducers({
   createBucket,
-  viewer
+  viewer,
+  getDesignData
 });
 
 const rootReducer = (state, action) => {

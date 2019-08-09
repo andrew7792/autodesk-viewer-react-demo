@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
-
+import {connect} from 'react-redux';
 // eslint-disable-next-line
 import ContextMenu from "./ContextMenu";
 import ListData from "./ListData";
@@ -47,9 +47,8 @@ function Bucket(props) {
         formEncType="multipart/form-data"
       />
       <ContextMenu id={data.id} buttons={buttons} />
-      {isOpen && <ListData data={items} child={Item} />}
+      {isOpen && <ListData data={items} child='item' />}
     </Fragment>
   );
 }
-
-export default Bucket;
+export default connect()(Bucket)

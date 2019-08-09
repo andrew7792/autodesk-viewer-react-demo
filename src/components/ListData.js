@@ -1,12 +1,13 @@
 import React from "react";
-
+import Bucket from './Bucket'
+import Item from './Item'
 import loading from "../img/loading.svg";
 
 import "./ListData.scss";
 
 function ListData(props) {
   const { data, child } = props;
-
+  console.log(props) 
   if (!data)
     return (
       <div className="loading">
@@ -16,7 +17,11 @@ function ListData(props) {
 
   return (
     <div className="list-data">
-      <ul>{data.map(value => child({ data: value }))}</ul>
+        <ul>{
+          child === 'buckets' 
+            ? data.map(value => <Bucket data={value} />)
+            : data.map(value => <Item  data={value} />)
+          }</ul>
     </div>
   );
 }
